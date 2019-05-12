@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-//parse-dashboard --appId Parstagram --masterKey A58Dhfnak --serverURL "https://rocky-ravine-16083.herokuapp.com/"
+//parse-dashboard --appId Parstagram --masterKey A58Dhfnak --serverURL "https://rocky-ravine-16083.herokuapp.com/parse"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.initialize(
             with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) -> Void in
                 configuration.applicationId = "Parstagram"
-                configuration.server = "https://rocky-ravine-16083.herokuapp.com/"
+                configuration.server = "https://rocky-ravine-16083.herokuapp.com/parse"
             })
         )
         
