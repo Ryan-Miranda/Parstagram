@@ -9,13 +9,12 @@
 import UIKit
 import Parse
 
-/*parse-dashboard --appId Parstagram --masterKey A58Dhfnak --serverURL "https://rocky-ravine-16083.herokuapp.com/" */
+//parse-dashboard --appId Parstagram --masterKey A58Dhfnak --serverURL "https://rocky-ravine-16083.herokuapp.com/"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
