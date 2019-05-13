@@ -111,11 +111,88 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="njg-pI-n9v"/>
                     </view>
-                    <navigationItem key="navigationItem" id="XkP-5R-5i7"/>
+                    <navigationItem key="navigationItem" id="XkP-5R-5i7">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="insta_camera_btn" id="Z3M-hk-kuK">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="kwh-ax-Qgi" kind="presentation" id="WXO-R4-mKO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QNY-95-t6M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="838" y="835"/>
+            <point key="canvasLocation" x="49" y="851"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="byI-lr-NeU">
+            <objects>
+                <viewController id="kwh-ax-Qgi" customClass="CameraViewController" customModule="Parstagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bgk-gX-J9b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Vbd-s2-WQw">
+                                <rect key="frame" x="24" y="50" width="327" height="300"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="FH7-0L-osr"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="5TG-2P-Lii" appends="YES" id="DRM-5v-7RW"/>
+                                </connections>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Caption" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tLQ-1a-AmX">
+                                <rect key="frame" x="24" y="390" width="327" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Szz-4x-o5M">
+                                <rect key="frame" x="24" y="438" width="327" height="32.5"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Post">
+                                            <attributes>
+                                                <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="onPost:" destination="kwh-ax-Qgi" eventType="touchUpInside" id="N1W-Q6-a0v"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ea8-zS-TYz" firstAttribute="trailing" secondItem="tLQ-1a-AmX" secondAttribute="trailing" constant="24" id="1MU-oM-qWZ"/>
+                            <constraint firstItem="Szz-4x-o5M" firstAttribute="top" secondItem="tLQ-1a-AmX" secondAttribute="bottom" constant="18" id="CGh-Eq-jmR"/>
+                            <constraint firstItem="tLQ-1a-AmX" firstAttribute="leading" secondItem="Ea8-zS-TYz" secondAttribute="leading" constant="24" id="If3-58-VIx"/>
+                            <constraint firstItem="tLQ-1a-AmX" firstAttribute="top" secondItem="Vbd-s2-WQw" secondAttribute="bottom" constant="40" id="Llx-0e-Hhd"/>
+                            <constraint firstItem="Vbd-s2-WQw" firstAttribute="leading" secondItem="Ea8-zS-TYz" secondAttribute="leading" constant="24" id="RNo-Rp-STV"/>
+                            <constraint firstItem="Ea8-zS-TYz" firstAttribute="trailing" secondItem="Vbd-s2-WQw" secondAttribute="trailing" constant="24" id="Zds-f6-TFJ"/>
+                            <constraint firstItem="Ea8-zS-TYz" firstAttribute="trailing" secondItem="Szz-4x-o5M" secondAttribute="trailing" constant="24" id="fnJ-Pt-Ekg"/>
+                            <constraint firstItem="Szz-4x-o5M" firstAttribute="leading" secondItem="Ea8-zS-TYz" secondAttribute="leading" constant="24" id="mh8-l9-WFr"/>
+                            <constraint firstItem="Vbd-s2-WQw" firstAttribute="top" secondItem="Ea8-zS-TYz" secondAttribute="top" constant="30" id="qNk-7y-3kC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ea8-zS-TYz"/>
+                    </view>
+                    <connections>
+                        <outlet property="captionField" destination="tLQ-1a-AmX" id="p6l-Gb-SFV"/>
+                        <outlet property="postImageView" destination="Vbd-s2-WQw" id="iws-Nf-DQK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rah-26-BEj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="5TG-2P-Lii">
+                    <connections>
+                        <action selector="onCameraTap:" destination="kwh-ax-Qgi" id="Dmk-86-2A3"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="772" y="850.52473763118451"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jiA-j9-aTe">
@@ -133,10 +210,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="egW-NW-DKc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="837.60000000000002" y="132.68365817091455"/>
+            <point key="canvasLocation" x="806" y="133"/>
         </scene>
     </scenes>
     <resources>
+        <image name="image_placeholder" width="375" height="375"/>
+        <image name="insta_camera_btn" width="25" height="25"/>
         <image name="instagram-new-logo.png" width="914" height="362"/>
     </resources>
 </document>
