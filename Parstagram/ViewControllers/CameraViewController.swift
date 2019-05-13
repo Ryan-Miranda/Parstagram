@@ -8,6 +8,7 @@
 
 import UIKit
 import AlamofireImage
+import Parse
 
 class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -21,6 +22,24 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     @IBAction func onPost(_ sender: Any) {
+        let post = PFObject(className: "Posts")
+        post["caption"] = captionField.text!
+        post["author"] = PFUser.current()!
+        
+        let imageData = postImageView.image!.pngData()
+        let file = PFFileObject(data: imageData!)
+        //image column gets url
+        post["image"] = file
+        
+        post.saveInBackground { (success, error) in
+            if success {
+                self.dismiss(animated: true, completion: nil)
+                print("Post saved!")
+            }
+            else {
+                self.displayPostError(error: error!)
+            }
+        }
     }
     
     @IBAction func onCameraTap(_ sender: Any) {
@@ -47,14 +66,17 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         postImageView.image = scaledImage
         dismiss(animated: true, completion: nil)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    //Post error alert controller
+    func displayPostError(error: Error) {
+        let title = "Login Error"
+        let message = "Oops! Something went wrong while posting your creation: \(error.localizedDescription)"
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        // create an OK action
+        let OKAction = UIAlertAction(title: "OK", style: .default)
+        // add the OK action to the alert controller
+        alertController.addAction(OKAction)
+        present(alertController, animated: true)
     }
-    */
-
+    
 }
