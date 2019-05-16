@@ -127,29 +127,41 @@
                                                         <constraint firstAttribute="width" secondItem="Th7-II-ytD" secondAttribute="height" multiplier="375:329" id="fmP-Am-Q09"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dK-yT-6VJ">
-                                                    <rect key="frame" x="8" y="345" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dK-yT-6VJ">
+                                                    <rect key="frame" x="16" y="345" width="48" height="21"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Name">
+                                                            <attributes>
+                                                                <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="This is a caption" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYw-uS-vjW">
-                                                    <rect key="frame" x="58" y="345" width="309" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYw-uS-vjW">
+                                                    <rect key="frame" x="67" y="347" width="299" height="19"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Caption">
+                                                            <attributes>
+                                                                <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="9dK-yT-6VJ" firstAttribute="leading" secondItem="GSJ-E0-XvO" secondAttribute="leading" constant="8" id="1BU-zD-mfh"/>
+                                                <constraint firstItem="9dK-yT-6VJ" firstAttribute="leading" secondItem="GSJ-E0-XvO" secondAttribute="leading" constant="16" id="1BU-zD-mfh"/>
                                                 <constraint firstItem="Th7-II-ytD" firstAttribute="top" secondItem="GSJ-E0-XvO" secondAttribute="top" constant="8" id="3XC-fK-tLE"/>
                                                 <constraint firstItem="9dK-yT-6VJ" firstAttribute="top" secondItem="Th7-II-ytD" secondAttribute="bottom" constant="8" id="4jg-ay-gg8"/>
                                                 <constraint firstItem="9dK-yT-6VJ" firstAttribute="top" secondItem="Th7-II-ytD" secondAttribute="bottom" constant="8" id="BT1-SA-x9d"/>
                                                 <constraint firstAttribute="trailing" secondItem="Th7-II-ytD" secondAttribute="trailing" id="FSB-G0-P1t"/>
                                                 <constraint firstItem="Th7-II-ytD" firstAttribute="leading" secondItem="GSJ-E0-XvO" secondAttribute="leading" id="RLS-Im-ysp"/>
-                                                <constraint firstItem="QYw-uS-vjW" firstAttribute="top" secondItem="Th7-II-ytD" secondAttribute="bottom" constant="8" id="TF8-qf-4Tm"/>
+                                                <constraint firstItem="QYw-uS-vjW" firstAttribute="top" secondItem="Th7-II-ytD" secondAttribute="bottom" constant="10" id="TF8-qf-4Tm"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="QYw-uS-vjW" secondAttribute="bottom" constant="8" id="jHq-tT-ZPu"/>
-                                                <constraint firstItem="QYw-uS-vjW" firstAttribute="leading" secondItem="9dK-yT-6VJ" secondAttribute="trailing" constant="8" id="qkk-dU-fRn"/>
+                                                <constraint firstItem="QYw-uS-vjW" firstAttribute="leading" secondItem="9dK-yT-6VJ" secondAttribute="trailing" constant="4" id="qkk-dU-fRn"/>
                                                 <constraint firstAttribute="trailing" secondItem="QYw-uS-vjW" secondAttribute="trailing" constant="8" id="xkz-Xf-rAw"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -157,6 +169,53 @@
                                             <outlet property="captionLabel" destination="QYw-uS-vjW" id="Jgz-KV-ca9"/>
                                             <outlet property="nameLabel" destination="9dK-yT-6VJ" id="Q00-Xq-Tru"/>
                                             <outlet property="photoView" destination="Th7-II-ytD" id="28k-OQ-nAY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" id="KHf-dB-LeC" customClass="CommentCell" customModule="Parstagram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="403" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KHf-dB-LeC" id="IuS-PK-cPs">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F3m-mG-E4x">
+                                                    <rect key="frame" x="16" y="8" width="45" height="19.5"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Name">
+                                                            <attributes>
+                                                                <font key="NSFont" size="16" name="HelveticaNeue-Bold"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgJ-ss-mqN">
+                                                    <rect key="frame" x="64" y="10" width="66.5" height="17.5"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Comment">
+                                                            <attributes>
+                                                                <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fgJ-ss-mqN" secondAttribute="bottom" constant="8" id="03S-So-hDf"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fgJ-ss-mqN" secondAttribute="trailing" constant="8" id="Ige-UN-LQm"/>
+                                                <constraint firstItem="F3m-mG-E4x" firstAttribute="top" secondItem="IuS-PK-cPs" secondAttribute="top" constant="8" id="Kxv-A5-FRH"/>
+                                                <constraint firstItem="F3m-mG-E4x" firstAttribute="leading" secondItem="IuS-PK-cPs" secondAttribute="leading" constant="16" id="QY3-V8-vOs"/>
+                                                <constraint firstItem="fgJ-ss-mqN" firstAttribute="top" secondItem="IuS-PK-cPs" secondAttribute="top" constant="10" id="iMn-ne-dod"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="F3m-mG-E4x" secondAttribute="bottom" constant="8" id="op7-B3-dS0"/>
+                                                <constraint firstItem="fgJ-ss-mqN" firstAttribute="leading" secondItem="F3m-mG-E4x" secondAttribute="trailing" constant="4" id="zAZ-ih-YH2"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="commentLabel" destination="fgJ-ss-mqN" id="Xkd-ps-bBq"/>
+                                            <outlet property="nameLabel" destination="F3m-mG-E4x" id="uWW-cf-z5u"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
