@@ -40,6 +40,16 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
+    @IBAction func onLogoutButton(_ sender: Any) {
+        PFUser.logOut()
+        
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let loginVC = main.instantiateViewController(withIdentifier: "LoginViewController")
+        
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        delegate.window?.rootViewController = loginVC
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
@@ -59,15 +69,29 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let post = posts[indexPath.row]
+        
+        let comment = PFObject(className: "Comments")
+        comment["text"] = "Test comment 1"
+        comment["post"] = post
+        comment["author"] = PFUser.current()!
+        
+        post.add(comment, forKey: "comments")
+        post.saveInBackground { (success, error) in
+            if error != nil {
+                self.displayCommentError(error: error!)
+            }
+        }
+    }
     
-    @IBAction func onLogoutButton(_ sender: Any) {
-        PFUser.logOut()
-        
-        let main = UIStoryboard(name: "Main", bundle: nil)
-        let loginVC = main.instantiateViewController(withIdentifier: "LoginViewController")
-        
-        let delegate = UIApplication.shared.delegate as! AppDelegate
-        delegate.window?.rootViewController = loginVC
+    func displayCommentError(error: Error) {
+        let title = "Comment Error"
+        let message = "Oops! Something went wrong while posting comment \(error.localizedDescription)"
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default)
+        alertController.addAction(OKAction)
+        present(alertController, animated: true)
     }
     
 }

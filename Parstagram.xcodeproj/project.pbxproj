@@ -99,6 +99,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		54375306228D3CEC00B5E631 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				54F8DB112288B0B500150055 /* LaunchScreen.storyboard */,
+				54F8DB0C2288B0B300150055 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		54F8DAFC2288B0B300150055 = {
 			isa = PBXGroup;
 			children = (
@@ -124,12 +133,11 @@
 		54F8DB072288B0B300150055 /* Parstagram */ = {
 			isa = PBXGroup;
 			children = (
+				54375306228D3CEC00B5E631 /* Storyboards */,
 				54F8DB412288E23E00150055 /* images */,
 				54F8DB3A2288CC5600150055 /* ViewControllers */,
 				54F8DB082288B0B300150055 /* AppDelegate.swift */,
-				54F8DB0C2288B0B300150055 /* Main.storyboard */,
 				54F8DB0F2288B0B500150055 /* Assets.xcassets */,
-				54F8DB112288B0B500150055 /* LaunchScreen.storyboard */,
 				54F8DB142288B0B500150055 /* Info.plist */,
 				54E8C62022891CB700D80FAD /* PostCell.swift */,
 			);
