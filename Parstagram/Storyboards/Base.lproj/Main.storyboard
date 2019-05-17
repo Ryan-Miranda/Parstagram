@@ -19,26 +19,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="instagram-new-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="ki2-iL-ccW">
-                                <rect key="frame" x="35" y="120" width="305" height="93"/>
+                                <rect key="frame" x="35" y="120" width="305" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="93" id="PLJ-bb-gRN"/>
+                                    <constraint firstAttribute="height" constant="100" id="PLJ-bb-gRN"/>
                                     <constraint firstAttribute="width" constant="305" id="SV7-SX-lEo"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dOp-Ea-dtc">
-                                <rect key="frame" x="24" y="273" width="327" height="30"/>
+                                <rect key="frame" x="24" y="280" width="327" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KZg-Fj-RaV">
-                                <rect key="frame" x="24" y="323" width="327" height="30"/>
+                                <rect key="frame" x="24" y="330" width="327" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f9O-Ir-F9f">
-                                <rect key="frame" x="40" y="433" width="55" height="32.5"/>
+                                <rect key="frame" x="40" y="440" width="55" height="32.5"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
@@ -54,7 +54,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A96-rP-hC2">
-                                <rect key="frame" x="275" y="433" width="68" height="32.5"/>
+                                <rect key="frame" x="275" y="440" width="68" height="32.5"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
@@ -217,6 +217,35 @@
                                             <outlet property="commentLabel" destination="fgJ-ss-mqN" id="Xkd-ps-bBq"/>
                                             <outlet property="nameLabel" destination="F3m-mG-E4x" id="uWW-cf-z5u"/>
                                         </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AddCommentCell" id="EbZ-Oh-buh">
+                                        <rect key="frame" x="0.0" y="447" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EbZ-Oh-buh" id="1v3-nd-E9y">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M5D-Cr-GXv">
+                                                    <rect key="frame" x="16" y="8" width="351" height="27.5"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Add a comment...">
+                                                            <attributes>
+                                                                <color key="NSColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="M5D-Cr-GXv" secondAttribute="bottom" constant="8" id="3Vc-cb-hzA"/>
+                                                <constraint firstAttribute="trailing" secondItem="M5D-Cr-GXv" secondAttribute="trailing" constant="8" id="Cfh-xE-aTd"/>
+                                                <constraint firstItem="M5D-Cr-GXv" firstAttribute="leading" secondItem="1v3-nd-E9y" secondAttribute="leading" constant="16" id="fPQ-rG-fA4"/>
+                                                <constraint firstItem="M5D-Cr-GXv" firstAttribute="top" secondItem="1v3-nd-E9y" secondAttribute="top" constant="8" id="wuj-9v-2MZ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
